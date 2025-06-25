@@ -12,6 +12,8 @@
   --color-secondary: #8080d7;
   --color-secondary-2: #292b55;
   --blur-ssm: 2px;
+  --breakpoint-xlg: 1440px;
+  --breakpoint-xxlg:1920px;
 }
 
 @media (prefers-color-scheme: dark) {
