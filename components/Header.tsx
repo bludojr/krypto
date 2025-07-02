@@ -1,14 +1,14 @@
-'use client'
+"use client";
 
-import { useState } from 'react';
-import Sidebar from './Sidebar';
+import { useState } from "react";
+import Sidebar from "./Sidebar";
 
-const links = [
+const links:any[] = [
   { id: 1, href: "#about", label: "about" },
   { id: 2, href: "#pricing", label: "pricing" },
   { id: 3, href: "#contact", label: "contact" },
   { id: 4, href: "#buy", label: "buy NFTs" },
-]
+];
 
 const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -19,36 +19,38 @@ const Header = () => {
 
   return (
     <>
-      <header className="backdrop-blur-ssm bg-primary   z-50 w-full pb-12 sm:pb-16 md:pb-20 lg:pb-24">
-        <div className="flex justify-between items-center">
+      <header className="z-50 w-full bg-primary pb-12 backdrop-blur-ssm sm:pb-16 md:pb-20 lg:pb-24">
+        <div className="flex items-center justify-between">
           <h1 className="font-semibold">KRYPTO</h1>
-          
+
           <nav className="hidden md:block">
-            <ul className="flex items-center gap-8 lg:gap-20 font-outfit md:tracking-wide">
+            <ul className="font-outfit flex items-center gap-8 md:tracking-wide lg:gap-20">
               {links.map(({ id, href, label }) => (
                 <li key={id}>
-                  <a className="hover:text-purple-300" href={href}>{label}</a>
+                  <a className="hover:text-purple-300" href={href}>
+                    {label}
+                  </a>
                 </li>
               ))}
             </ul>
           </nav>
-          
-          <button 
-            className="md:hidden flex flex-col justify-center items-center gap-1.5"
+
+          <button
+            className="flex flex-col items-center justify-center gap-1.5 md:hidden"
             onClick={toggleSidebar}
             aria-label="Toggle menu"
           >
-            <span className=" block w-6 h-0.5 bg-white rounded-full"></span>
-            <span className=" block w-6 h-0.5 bg-white rounded-full"></span>
-            <span className=" block w-6 h-0.5 bg-white rounded-full"></span>
+            <span className="block h-0.5 w-6 rounded-full bg-white"></span>
+            <span className="block h-0.5 w-6 rounded-full bg-white"></span>
+            <span className="block h-0.5 w-6 rounded-full bg-white"></span>
           </button>
         </div>
       </header>
-      
-      <Sidebar 
-        isOpen={isSidebarOpen} 
-        toggleSidebar={toggleSidebar} 
-        links={links} 
+
+      <Sidebar
+        isOpen={isSidebarOpen}
+        toggleSidebar={toggleSidebar}
+        links={links}
       />
     </>
   );

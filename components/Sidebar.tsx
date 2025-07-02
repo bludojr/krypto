@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -19,8 +19,8 @@ const Sidebar = ({ isOpen, toggleSidebar, links }: SidebarProps) => {
       }
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, [isOpen, toggleSidebar]);
 
   return (
@@ -35,14 +35,12 @@ const Sidebar = ({ isOpen, toggleSidebar, links }: SidebarProps) => {
 
       {/* Modern Sidebar */}
       <div
-        className={`fixed top-4 right-4 rounded-2xl w-60 bg-gradient-to-b from-gray-900 to-black border border-gray-800 shadow-xl text-white z-50 transform transition-all duration-300 ease-in-out ${
-          isOpen
-            ? 'translate-x-0 opacity-100'
-            : 'translate-x-full opacity-0'
+        className={`fixed top-4 right-4 z-50 w-60 transform rounded-2xl border border-gray-800 bg-gradient-to-b from-gray-900 to-black text-white shadow-xl transition-all duration-300 ease-in-out ${
+          isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
         }`}
       >
         <div className="flex flex-col p-5">
-          <div className="flex justify-between items-center mb-6">
+          <div className="mb-6 flex items-center justify-between">
             <h3 className="text-lg font-semibold text-purple-300">Menu</h3>
             <button
               className="text-gray-400 hover:text-white"
@@ -72,10 +70,10 @@ const Sidebar = ({ isOpen, toggleSidebar, links }: SidebarProps) => {
                 <li key={id} className="py-3">
                   <a
                     href={href}
-                    className="flex items-center text-gray-300 hover:text-purple-300 transition-colors duration-200 capitalize"
+                    className="flex items-center text-gray-300 capitalize transition-colors duration-200 hover:text-purple-300"
                     onClick={toggleSidebar}
                   >
-                    <span className="text-purple-400 mr-2">•</span>
+                    <span className="mr-2 text-purple-400">•</span>
                     {label}
                   </a>
                 </li>
@@ -83,8 +81,8 @@ const Sidebar = ({ isOpen, toggleSidebar, links }: SidebarProps) => {
             </ul>
           </nav>
 
-          <div className="mt-6 pt-4 border-t border-gray-700">
-            <button className="w-full py-2 bg-purple-600 hover:bg-purple-700 rounded-lg text-white transition-colors duration-200">
+          <div className="mt-6 border-t border-gray-700 pt-4">
+            <button className="w-full rounded-lg bg-purple-600 py-2 text-white transition-colors duration-200 hover:bg-purple-700">
               Connect Wallet
             </button>
           </div>

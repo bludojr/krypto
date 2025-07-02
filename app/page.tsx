@@ -4,11 +4,10 @@ import Pricing from "@/components/Pricing";
 
 export default function Home() {
   return (
-   <>
-   <Header/>
-   <Hero/>
-   <Pricing/>
-   </>
+    <>
+      <Header />
+      <Hero />
+      <Pricing />
+    </>
   );
 }
- 
