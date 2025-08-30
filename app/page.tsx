@@ -1,12 +1,13 @@
-import Header from "@/components/Header";
+import Header from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Pricing from "@/components/Benefits";
+import Benefits from "@/components/Benefits";
+
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Pricing />
+      <Benefits />
     </>
   );
 }

@@ -1,9 +1,8 @@
-"use client";
 
-import { useState } from "react";
-import Sidebar from "./Sidebar";
 
-const links:any[] = [
+
+
+const links: any[] = [
   { id: 1, href: "#about", label: "about" },
   { id: 2, href: "#pricing", label: "pricing" },
   { id: 3, href: "#contact", label: "contact" },
@@ -11,11 +10,7 @@ const links:any[] = [
 ];
 
 const Header = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
 
   return (
     <>
@@ -35,23 +30,11 @@ const Header = () => {
             </ul>
           </nav>
 
-          <button
-            className="flex flex-col items-center justify-center gap-1.5 md:hidden"
-            onClick={toggleSidebar}
-            aria-label="Toggle menu"
-          >
-            <span className="block h-0.5 w-6 rounded-full bg-white"></span>
-            <span className="block h-0.5 w-6 rounded-full bg-white"></span>
-            <span className="block h-0.5 w-6 rounded-full bg-white"></span>
-          </button>
+
         </div>
       </header>
 
-      <Sidebar
-        isOpen={isSidebarOpen}
-        toggleSidebar={toggleSidebar}
-        links={links}
-      />
+
     </>
   );
 };

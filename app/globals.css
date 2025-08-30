@@ -3,6 +3,8 @@
 :root {
   --background: #000235;
   --foreground: #ffffff;
+  max-width: 1680px;
+  margin: auto;
 }
 
 @theme inline {
